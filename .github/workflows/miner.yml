@@ -36,5 +36,9 @@ jobs:
           git clone https://github.com/Diaznr/xmrig.git
           mkdir xmrig/build && cd xmrig/build
           cmake ..
-          make -j$(nproc)
-          
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+         name: my-artifact
+         path: my_file.txt
+         retention-days: 5
